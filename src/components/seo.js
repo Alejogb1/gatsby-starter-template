@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { Flyyer } from "@flyyer/flyyer"
 
-const Seo = ({ description, lang, meta, title }) => {
+const Seo = ({ description, lang, meta, title }, props) => {
   const { site } = useStaticQuery(
     graphql`
       query {
