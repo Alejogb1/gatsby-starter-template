@@ -10,9 +10,8 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { Flyyer } from "@flyyer/flyyer"
-import { useLocation } from "react-router-dom"
 
-const Seo = ({ description, lang, meta, title }) => {
+const Seo = ({ description, lang, meta, title, location }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -31,8 +30,6 @@ const Seo = ({ description, lang, meta, title }) => {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
-
-  const location = useLocation()
 
   const flyyer = new Flyyer({
     project: "alejogarciag1",
